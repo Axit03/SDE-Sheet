@@ -1,0 +1,24 @@
+// Remove Duplicates From Sorted Array
+// Time Complexity - o(n)
+// Space Complexity - o(1)
+// Using Two Pointer Approach
+
+int removeDuplicates(vector<int> &arr, int n) {
+	// Write your code here.
+    int i=0;
+    if(arr.size()==0){
+        return 0;
+    }
+    for(int j=1;j<n;j++){
+        if(arr[j]!=arr[i]){
+           i++;
+           arr[i]=arr[j];
+        }
+            
+        
+}
+    return i+1; //for length we return index + 1
+    
+}
+
+

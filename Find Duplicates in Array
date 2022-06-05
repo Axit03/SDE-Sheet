@@ -1,0 +1,11 @@
+//Find Duplicates in Array
+//Time Complexity - O(n)
+
+int findDuplicate(vector<int> &arr, int n){   
+    sort(arr.begin(),arr.end());
+    for(int i=0;i<n;i++){
+        if(arr[i]==arr[i+1]){
+            return arr[i];
+        }
+    }
+}

@@ -1,0 +1,46 @@
+1.using binary search
+
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+       if (matrix.size() ==0){
+           return false;
+       }
+        int n=matrix.size();
+        int m=matrix[0].size();
+        
+        int s=0;
+        int e=(n*m)-1;
+        
+        while(s<=e){
+            int mid =(s+(e-s)/2);
+            if(matrix[mid/m][mid%m]==target){
+                return true;
+            }
+            else if(matrix[mid/m][mid%m]>target){
+                e=mid-1;
+            }
+            else{
+                s=mid+1;
+            }
+            mid =(s+(e-s)/2);
+        }
+        return false;
+    }
+    
+    2.Colum pointer approach
+    
+    bool findTargetInMatrix(vector < vector < int >> & mat, int m, int n, int target) {
+    int i=0;
+    int j=n-1;
+    while(i<m && j>=0){
+        if(mat[i][j]==target){
+            return true;
+        }
+        else if(mat[i][j]>target){
+            j--;
+        }
+        else{
+            i++;
+        }
+    }
+    return false;
+}
